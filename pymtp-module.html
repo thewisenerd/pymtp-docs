@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pymtp</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;pymtp
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="pymtp-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module pymtp</h1><p class="nomargin-top"><span class="codelink"><a href="pymtp-pysrc.html">source&nbsp;code</a></span></p>
+<p>PyMTP is a pythonic wrapper around libmtp, making it a bit more 
+  friendly to use in python</p>
+  <p>Example Usage (or see examples/):</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">import</span> pymtp
+<span class="py-prompt">&gt;&gt;&gt; </span>mtp = pymtp.MTP()
+<span class="py-prompt">&gt;&gt;&gt; </span>mtp.connect()
+<span class="py-output">PTP: Opening session</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span><span class="py-keyword">print</span> mtp.get_devicename()
+<span class="py-output">Device name</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt; </span>mtp.disconnect()
+<span class="py-output">PTP: Closing session</span>
+<span class="py-output"></span><span class="py-prompt">&gt;&gt;&gt;</span></pre>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.NoDeviceConnected-class.html" class="summary-name">NoDeviceConnected</a><br />
+      Raised when there isn't a device connected to the USB bus
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.AlreadyConnected-class.html" class="summary-name">AlreadyConnected</a><br />
+      Raised when we're already connected to a device and there is an 
+        attempt to connect
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.UnsupportedCommand-class.html" class="summary-name">UnsupportedCommand</a><br />
+      Raised when the connected device does not support the command 
+        issued
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.CommandFailed-class.html" class="summary-name">CommandFailed</a><br />
+      Raised when the connected device returned an error when trying to 
+        execute a command
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.NotConnected-class.html" class="summary-name">NotConnected</a><br />
+      Raised when a command is called and the device is not connected
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.ObjectNotFound-class.html" class="summary-name">ObjectNotFound</a><br />
+      Raised when a command tries to get an object that doesn't exist
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_Error-class.html" class="summary-name">LIBMTP_Error</a><br />
+      LIBMTP_Error Contains the ctypes structure for LIBMTP_error_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_DeviceStorage-class.html" class="summary-name">LIBMTP_DeviceStorage</a><br />
+      LIBMTP_DeviceStorage Contains the ctypes structure for 
+        LIBMTP_devicestorage_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_DeviceEntry-class.html" class="summary-name">LIBMTP_DeviceEntry</a><br />
+      LIBMTP_DeviceEntry Contains the ctypes structure for 
+        LIBMTP_device_entry_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_RawDevice-class.html" class="summary-name">LIBMTP_RawDevice</a><br />
+      LIBMTP_RawDevice Contains the ctypes structure for 
+        LIBMTP_raw_device_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_MTPDevice-class.html" class="summary-name">LIBMTP_MTPDevice</a><br />
+      LIBMTP_MTPDevice Contains the ctypes structure for 
+        LIBMTP_mtpdevice_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_File-class.html" class="summary-name">LIBMTP_File</a><br />
+      LIBMTP_File Contains the ctypes structure for LIBMTP_file_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_Track-class.html" class="summary-name">LIBMTP_Track</a><br />
+      LIBMTP_Track Contains the ctypes structure for LIBMTP_track_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_Playlist-class.html" class="summary-name">LIBMTP_Playlist</a><br />
+      LIBMTP_Playlist Contains the ctypes structure for LIBMTP_playlist_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.LIBMTP_Folder-class.html" class="summary-name">LIBMTP_Folder</a><br />
+      LIBMTP_Folder Contains the ctypes structure for LIBMTP_folder_t
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp.MTP-class.html" class="summary-name">MTP</a><br />
+      The MTP object This is the main wrapper around libmtp
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__VERSION__"></a><span class="summary-name">__VERSION__</span> = <code title="'0.0.5'"><code class="variable-quote">'</code><code class="variable-string">0.0.5</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__VERSION_MACRO__"></a><span class="summary-name">__VERSION_MACRO__</span> = <code title="5">5</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__VERSION_MINOR__"></a><span class="summary-name">__VERSION_MINOR__</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__VERSION_MAJOR__"></a><span class="summary-name">__VERSION_MAJOR__</span> = <code title="0">0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__VERSION_TUPLE__"></a><span class="summary-name">__VERSION_TUPLE__</span> = <code title="(0, 0, 5)"><code class="variable-group">(</code>0<code class="variable-op">, </code>0<code class="variable-op">, </code>5<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__AUTHOR__"></a><span class="summary-name">__AUTHOR__</span> = <code title="'Nick Devito (nick@nick125.com)'"><code class="variable-quote">'</code><code class="variable-string">Nick Devito (nick@nick125.com)</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__LICENSE__"></a><span class="summary-name">__LICENSE__</span> = <code title="'GPL-3'"><code class="variable-quote">'</code><code class="variable-string">GPL-3</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__DEBUG__"></a><span class="summary-name">__DEBUG__</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_module_path"></a><span class="summary-name">_module_path</span> = <code title="'libmtp.so.9'"><code class="variable-quote">'</code><code class="variable-string">libmtp.so.9</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_libmtp"></a><span class="summary-name">_libmtp</span> = <code title="&lt;CDLL 'libmtp.so.9', handle 132f7b0 at 7fc3615f5c90&gt;">&lt;CDLL 'libmtp.so.9', handle 132f7b0 at 7fc3615f5c90&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp-module.html#LIBMTP_Filetype" class="summary-name">LIBMTP_Filetype</a> = <code title="{'AAC': c_int(29),
+ 'ALBUM': c_int(41),
+ 'ASF': c_int(10),
+ 'AUDIBLE': c_int(4),
+ 'AVI': c_int(8),
+ 'BMP': c_int(16),
+ 'DOC': c_int(34),
+ 'FIRMWARE': c_int(28),
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">AAC</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(29)<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ALBUM</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(41)<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ASF</code><code class="variable-quote">'</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="pymtp-module.html#LIBMTP_Error_Number" class="summary-name">LIBMTP_Error_Number</a> = <code title="{'CANCELLED': c_int(8),
+ 'CONNECTING': c_int(7),
+ 'GENERAL': c_int(1),
+ 'MEMORY_ALLOCATION': c_int(4),
+ 'NONE': c_int(0),
+ 'NO_DEVICE_ATTACHED': c_int(5),
+ 'PTP_LAYER': c_int(2),
+ 'STORAGE_FULL': c_int(6),
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">CANCELLED</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(8)<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">CONNECTING</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="LIBMTP_Filetype"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">LIBMTP_Filetype</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">AAC</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(29)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ALBUM</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(41)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ASF</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(10)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">AUDIBLE</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(4)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">AVI</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(8)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">BMP</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(16)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">DOC</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(34)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">FIRMWARE</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(28)<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="LIBMTP_Error_Number"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">LIBMTP_Error_Number</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">CANCELLED</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(8)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">CONNECTING</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(7)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">GENERAL</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(1)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">MEMORY_ALLOCATION</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(4)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">NONE</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(0)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">NO_DEVICE_ATTACHED</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(5)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">PTP_LAYER</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(2)<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">STORAGE_FULL</code><code class="variable-quote">'</code><code class="variable-op">: </code>c_int(6)<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Nov 14 12:23:03 2015
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
